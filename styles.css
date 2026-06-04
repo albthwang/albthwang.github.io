@@ -40,9 +40,9 @@ h1, h2, h3, h4 {
   margin: 0 0 0.5em;
 }
 
-h1 { font-size: clamp(2rem, 4.5vw, 3.1rem); }
-h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
-h3 { font-size: 1.25rem; }
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+h3 { font-size: 1.5rem; }
 
 p { margin: 0 0 1rem; }
 
@@ -129,33 +129,32 @@ img { max-width: 100%; display: block; }
   line-height: 1;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (full-bleed banner) ---------- */
 .hero {
-  background: linear-gradient(180deg, var(--warm-gray) 0%, var(--white) 100%);
-  padding: clamp(3rem, 7vw, 5.5rem) 0;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 3rem;
+  position: relative;
+  min-height: 78vh;
+  display: flex;
   align-items: center;
+  background: #cdc8bd url("/images/hero.webp") center center / cover no-repeat;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 70%);
+}
+.hero .container { position: relative; z-index: 1; }
+.hero-content { max-width: 36rem; }
 .hero .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--steel);
+  color: var(--navy);
   margin-bottom: 0.8rem;
 }
-.hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 34ch; }
-.hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.6rem; }
-.hero-img img {
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  width: 100%;
-  object-fit: cover;
-}
+.hero p.lead { font-size: 1.2rem; color: var(--charcoal); max-width: 32ch; }
+.hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.8rem; }
 
 /* ---------- Sections ---------- */
 .section { padding: clamp(3rem, 6vw, 5rem) 0; }
@@ -355,8 +354,9 @@ textarea { min-height: 140px; resize: vertical; }
   .site-nav a { padding: 0.7rem 0; width: 100%; }
   .nav-cta { margin-top: 0.5rem; }
 
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-img { order: -1; }
+  .hero { min-height: 70vh; }
+  .hero::before { background: linear-gradient(180deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.6) 100%); }
+  .hero-content { max-width: 100%; }
   .cards { grid-template-columns: 1fr; }
   .quotes { grid-template-columns: 1fr; }
   .split { grid-template-columns: 1fr; }
