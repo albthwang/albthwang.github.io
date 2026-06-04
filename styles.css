@@ -239,7 +239,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
 }
 .split img {
   width: 100%;
