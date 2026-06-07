@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trailfindertutoring.com/sitemap.xml
+Sitemap: https://alberthwang.me/sitemap.xml
