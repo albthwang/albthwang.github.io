@@ -21,9 +21,8 @@ Shared styles live in `styles.css`; tiny JS in `main.js`; images in `images/`.
 
 ## Contact form
 
-The contact form posts to [Formspree](https://formspree.io) (free). Create a
-form there and replace `YOUR_FORM_ID` in `contact/index.html`. Also update the
-placeholder `mailto:` address. No backend runs on GitHub Pages.
+The contact form posts to [Formspree](https://formspree.io) (free) at endpoint
+`xbdegvdr` (see `contact/index.html`). No backend runs on GitHub Pages.
 
 ## Custom domain
 
